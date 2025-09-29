@@ -1,0 +1,278 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMD3rD+sDy4HgVS4LXnHcjb",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AnikPal-code/Learning_Pytorch/blob/main/Part1_Tensor\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import torch\n",
+        "import numpy as np"
+      ],
+      "metadata": {
+        "id": "jgoWXBBeKj3O"
+      },
+      "execution_count": 4,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## LIST"
+      ],
+      "metadata": {
+        "id": "LoeNN251SWTu"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "my_list = [1,2,3,4,5], [6,7,8,9,10]\n",
+        "my_list\n"
+      ],
+      "metadata": {
+        "id": "i6FfWrD6SY5B",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "fa13815f-58fc-4c77-bf5a-c1a4ad9a4d16"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "([1, 2, 3, 4, 5], [6, 7, 8, 9, 10])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 6
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## Numpy Array"
+      ],
+      "metadata": {
+        "id": "a7KJm7MhWUAC"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np1 = np.random.rand(3, 4)\n",
+        "np1"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ggNmaxo0Wj9W",
+        "outputId": "c78a85c9-cecc-4430-b41d-90526aafb763"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[0.10882146, 0.20916625, 0.31249957, 0.33009693],\n",
+              "       [0.04364618, 0.67182267, 0.97272069, 0.69217494],\n",
+              "       [0.97541877, 0.29651502, 0.51135813, 0.81959556]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np1.dtype"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_eencGQmWm22",
+        "outputId": "97698169-9c9e-426e-808c-bba35d547b64"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "dtype('float64')"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 8
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## Tensors"
+      ],
+      "metadata": {
+        "id": "-sTZ92VGWpHL"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tensor_2d = torch.randn(3, 4)\n",
+        "tensor_2d"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bCQbIBriXjG3",
+        "outputId": "23f87549-cb39-46b0-f1a3-56297957c555"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "tensor([[ 0.9198,  1.5700,  1.1297, -0.7344],\n",
+              "        [ 0.7824, -0.2099,  0.2642, -1.3896],\n",
+              "        [ 0.0507, -0.3145,  0.1851, -0.6733]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 9
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tensor_3d = torch.zeros(2,3,4)\n",
+        "tensor_3d"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JkAsuhecXmSi",
+        "outputId": "72481f62-b4bd-4794-8e86-7e509ad20087"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "tensor([[[0., 0., 0., 0.],\n",
+              "         [0., 0., 0., 0.],\n",
+              "         [0., 0., 0., 0.]],\n",
+              "\n",
+              "        [[0., 0., 0., 0.],\n",
+              "         [0., 0., 0., 0.],\n",
+              "         [0., 0., 0., 0.]]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "## Create tensor out of numpy array\n",
+        "my_tensor = torch.tensor(np1)\n",
+        "my_tensor"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ANfWVh-xX8-b",
+        "outputId": "29433de7-b27d-48a8-e65f-2f3df4887f48"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "tensor([[0.1088, 0.2092, 0.3125, 0.3301],\n",
+              "        [0.0436, 0.6718, 0.9727, 0.6922],\n",
+              "        [0.9754, 0.2965, 0.5114, 0.8196]], dtype=torch.float64)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 11
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tensor_2d.dtype, tensor_3d.dtype, my_tensor.dtype"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_q2TVSzXYFhp",
+        "outputId": "47c95c91-db05-46bf-d5fd-d5d8cc875ee3"
+      },
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(torch.float32, torch.float32, torch.float64)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "8yEYrfLUZpYq"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
